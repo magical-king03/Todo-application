@@ -44,7 +44,7 @@ function ShowTodo() {
 
     const updateTaskStatus = async (id, status) => {
         try {
-            const updateUrl = `https://todo-application-rho-sand.vercel.app/-tasks/${id}`;
+            const updateUrl = `https://todo-application-rho-sand.vercel.app/api-tasks/${id}`;
             await fetch(updateUrl, {
                 method: 'PATCH',
                 body: JSON.stringify({ completed: status }),
@@ -62,7 +62,7 @@ function ShowTodo() {
 
     const deleteConfirm = async () => {
         try {
-            const deleteUrl = `https://todo-application-rho-sand.vercel.app/-tasks/${taskToDelete}`;
+            const deleteUrl = `https://todo-application-rho-sand.vercel.app/api-tasks/${taskToDelete}`;
             const response = await fetch(deleteUrl, { method: 'DELETE' });
 
             if (response.ok) {
