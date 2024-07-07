@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://duty-dash.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], // Specify the allowed HTTP methods
     credentials: true, // Enable CORS credentials if needed
 }));

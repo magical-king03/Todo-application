@@ -10,7 +10,7 @@ function EditTodo() {
     useEffect(() => {
         const fetchTask = async () => {
             try {
-                const response = await fetch(`http://localhost:4000/api-tasks/${id}`)
+                const response = await fetch(`https://todo-application-rho-sand.vercel.app/api-tasks/${id}`)
                 const data = await response.json();
                 data.taskDate = data.taskDate.split('T')[0];
                 setTask(data);
@@ -30,7 +30,7 @@ function EditTodo() {
     const editTaskHandler = async (e) => {
         e.preventDefault();
         try {
-            const updateUrl = `http://localhost:4000/api-tasks/${id}`;
+            const updateUrl = `https://todo-application-rho-sand.vercel.app/api-tasks/${id}`;
             await fetch(updateUrl, {
                 method: 'PUT',
                 body: JSON.stringify(task),

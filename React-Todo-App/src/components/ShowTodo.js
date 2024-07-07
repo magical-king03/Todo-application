@@ -16,7 +16,7 @@ function ShowTodo() {
 
     const fetchData = useCallback(async () => {
         try {
-            const response = await fetch('http://localhost:4000/api-tasks');
+            const response = await fetch('https://todo-application-rho-sand.vercel.app/api-tasks');
             const data = await response.json();
             const tempTasks = [];
 
@@ -44,7 +44,7 @@ function ShowTodo() {
 
     const updateTaskStatus = async (id, status) => {
         try {
-            const updateUrl = `http://localhost:4000/api-tasks/${id}`;
+            const updateUrl = `https://todo-application-rho-sand.vercel.app/-tasks/${id}`;
             await fetch(updateUrl, {
                 method: 'PATCH',
                 body: JSON.stringify({ completed: status }),
@@ -62,7 +62,7 @@ function ShowTodo() {
 
     const deleteConfirm = async () => {
         try {
-            const deleteUrl = `http://localhost:4000/api-tasks/${taskToDelete}`;
+            const deleteUrl = `https://todo-application-rho-sand.vercel.app/-tasks/${taskToDelete}`;
             const response = await fetch(deleteUrl, { method: 'DELETE' });
 
             if (response.ok) {
