@@ -16,7 +16,7 @@ function AddTodo() {
     if (taskName === "" || taskDate === "" || taskDesc === "") {
       alert("Fill all the details...")
     } else {
-      let result = await fetch('https://todo-application-rho-sand.vercel.app/-task', {
+      let result = await fetch('https://todo-application-rho-sand.vercel.app/add-task', {
         method: 'post',
         body: JSON.stringify({ taskName, taskDesc, taskDate, addedBy }),
         headers: {
