@@ -91,7 +91,7 @@ function AddTodo() {
                                 const today = new Date();
                                 console.log(selectedDate)
                                 if (selectedDate >= today) {
-                                    handleChange(e);
+                                  setTaskDate(e.target.value)
                                 } else {
                                     alert("Select appropriate date")
                                 }
@@ -120,7 +120,7 @@ function AddTodo() {
                                 const today = new Date();
                                 console.log(selectedDate)
                                 if (selectedDate >= today) {
-                                    handleChange(e);
+                                    setTaskDate(e.target.value)
                                 } else {
                                     alert("Select appropriate date")
                                 }
