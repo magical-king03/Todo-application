@@ -86,7 +86,16 @@ function AddTodo() {
             <br />
             <textarea className='bg-[#a06b47] w-[350px] rounded-lg mt-3 px-5 py-3 text-white hidden lg:block' rows={8} placeholder='Enter the description' value={taskDesc} onChange={(e) => setTaskDesc(e.target.value)}></textarea>
             <textarea className='bg-[#a06b47] w-[350px] rounded-lg mt-3 px-5 py-3 text-white lg:hidden block' rows={2} placeholder='Enter the description' value={taskDesc} onChange={(e) => setTaskDesc(e.target.value)}></textarea>
-            <input type='date' placeholder='Enter the date' className='mt-3 bg-[#a06b47] text-white w-[350px] rounded-lg text-xl px-5 py-3' value={taskDate} onChange={(e) => setTaskDate(e.target.value)} />
+            <input type='date' placeholder='Enter the date' className='mt-3 bg-[#a06b47] text-white w-[350px] rounded-lg text-xl px-5 py-3' value={taskDate} onChange={(e) => {
+                                const selectedDate = new Date(e.target.value);
+                                const today = new Date();
+                                console.log(selectedDate)
+                                if (selectedDate >= today) {
+                                    handleChange(e);
+                                } else {
+                                    alert("Select appropriate date")
+                                }
+                            }} />
             <br />
             <div className='w-[350px] text-center'>
               <button className="bg-white text-black mt-3 border-1 border-black border px-7 py-3 rounded-full cursor-pointer" onClick={addTaskHandler}>
@@ -106,7 +115,16 @@ function AddTodo() {
               <textarea className='bg-[#a06b47] w-[230px] rounded-lg mt-3 px-5 py-3 text-white block' rows={5} placeholder='Enter the description' value={taskDesc} onChange={(e) => setTaskDesc(e.target.value)}></textarea>
             </div>
             <div className='flex items-center justify-center'>
-              <input type='date' placeholder='Enter the date' className='mt-3 bg-[#a06b47] text-white w-[230px] rounded-lg text-xl px-5 py-3' value={taskDate} onChange={(e) => setTaskDate(e.target.value)} />
+              <input type='date' placeholder='Enter the date' className='mt-3 bg-[#a06b47] text-white w-[230px] rounded-lg text-xl px-5 py-3' value={taskDate} onChange={(e) => {
+                                const selectedDate = new Date(e.target.value);
+                                const today = new Date();
+                                console.log(selectedDate)
+                                if (selectedDate >= today) {
+                                    handleChange(e);
+                                } else {
+                                    alert("Select appropriate date")
+                                }
+                            }} />
             </div>
             <br />
             <div className='text-center'>
