@@ -176,7 +176,7 @@ function ShowTodo() {
                     <p className='text-xl md:font-bold font-semibold'>Select task:</p>
                     <select name='completed' value={status} onChange={taskStatusHandler} className='border border-2 border-black text-center rounded-lg md:p-1 p-[0.5px]'>
                         <option>All</option>
-                        <option>Uncompleted</option>
+                        <option>Pending</option>
                         <option>Completed</option>
                         <option>Failed</option>
                     </select>
