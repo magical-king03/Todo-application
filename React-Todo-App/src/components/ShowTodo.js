@@ -119,7 +119,7 @@ function ShowTodo() {
         setStatus(statusValue);
         if (statusValue === "All") {
             setFilteredTodos(allTodos);
-        } else if (statusValue === "Uncompleted") {
+        } else if (statusValue === "Pending") {
             const filteredTasks = allTodos.filter(task => task.completed === "uncompleted");
             setFilteredTodos(filteredTasks)
         } else if (statusValue === "Completed") {
