@@ -12,6 +12,7 @@ function ShowTodo() {
     const [taskToDelete, setTaskToDelete] = useState(null);
     const navigate = useNavigate();
     const today = new Date();
+
     const [deleteCheck, setDeleteCheck] = useState(false);
 
     const fetchData = useCallback(async () => {
@@ -23,7 +24,7 @@ function ShowTodo() {
             for (const task of data) {
                 const taskDate = new Date(task.taskDate);
 
-                if (taskDate <= today && task.completed !== "failed") {
+                if (task.completed !== "completed" && task.completed !== "failed" && taskDate <= today) {
                     await updateTaskStatus(task._id, "failed");
                 }
                 if (taskDate > today && task.completed !== "completed") {
@@ -90,7 +91,7 @@ function ShowTodo() {
             fetchData();
         }
     };
-       
+
 
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -240,7 +241,7 @@ function ShowTodo() {
                             <div className='flex items-center gap-3 justify-center mb-[30px]'>
                                 <button
                                     onClick={() => checkTask(todo._id)}
-                                    className={todo.completed === "completed"  ? 'cus-checkbox1' : 'cus-checkbox'}
+                                    className={todo.completed === "completed" ? 'cus-checkbox1' : 'cus-checkbox'}
                                 />
                                 <div className={`w-[600px] bg-[#a06b47] px-4 py-4 rounded-lg text-white ${todo.completed === "failed" ? 'strikethrough' : ''}`}>
                                     <p className='text-2xl font-bold'>{todo.taskName}</p>
