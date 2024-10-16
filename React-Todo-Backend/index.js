@@ -111,7 +111,7 @@ app.delete('/api-tasks/:id', async (req, res) => {
     }
 });
 
-// Start the server
+// Starting the server
 const PORT = 4000;
 app.listen(PORT, () => {
     console.log(`Session started on port ${PORT}`);

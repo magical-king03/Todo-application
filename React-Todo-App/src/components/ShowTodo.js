@@ -27,7 +27,7 @@ function ShowTodo() {
                 if (task.completed !== "completed" && task.completed !== "failed" && taskDate <= today) {
                     await updateTaskStatus(task._id, "failed");
                 }
-                if (taskDate > today && task.completed !== "completed") {
+                if (taskDate >= today && task.completed !== "completed") {
                     await updateTaskStatus(task._id, "uncompleted");
                 }
 
